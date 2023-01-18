@@ -3,7 +3,7 @@ version: '3.7'
 services:
   selenium-autologin:
     container_name: selenium-autologin
-    build: .
+    image: rcunov/selenium-autologin
     environment:
       - SITE_USER=${SITE_USER}
       - SITE_PASS=${SITE_PASS}
