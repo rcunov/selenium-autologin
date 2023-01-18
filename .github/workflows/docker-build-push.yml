@@ -27,4 +27,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/selenium-autologin:latest --platform=linux/amd64
+          tags: --platform=linux/amd64 ${{ secrets.DOCKERHUB_USERNAME }}/selenium-autologin:latest
