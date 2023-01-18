@@ -1,0 +1,11 @@
+---
+version: '3.7'
+services:
+  selenium-autologin:
+    container_name: selenium-autologin
+    build: .
+    environment:
+      - SITE_USER=${SITE_USER}
+      - SITE_PASS=${SITE_PASS}
+      - SITE_URL=${SITE_URL}
+    shm_size: 2g
