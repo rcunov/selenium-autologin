@@ -2,7 +2,7 @@
 This is a *very* simple Docker container that automates logging in to a simple site with Selenium and Firefox. 
 
 ## Limitations
-Currently, it only supports linux/amd64 architecture and a site with the login field named "username" and password field named "password". Obviously this is not a universal assumption, hence "*very* simple". This is more of a PoC than anything else, so I didn't include error handling or flesh it out more than basic functionality.
+Currently, it only supports x86_64 and aarch64/ARMv8 architecture and a site with the login field named "username" and password field named "password". Obviously this is not a universal assumption, hence "*very* simple". This is more of a PoC than anything else, so I didn't include error handling or flesh it out more than basic functionality.
 
 ## Setup
 Create a folder and create a new file called `.env` within it. Fill it out with your credentials and the site URL like:
