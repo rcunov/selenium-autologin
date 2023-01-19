@@ -5,8 +5,10 @@ WORKDIR /app
 # install dependencies
 RUN apt update && apt install -y curl firefox-esr && rm -rf /var/lib/apt/lists/*
 
-# download geckodriver and put on PATH
-RUN curl -o geckodriver.tgz -sSL https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-linux64.tar.gz && tar xzvf geckodriver.tgz -C /usr/local/bin && rm geckodriver.tgz
+# download proper geckodriver and put on PATH
+RUN arch="$(uname -m)"; case "$arch" in aarch64) export CPU_TYPE='linux-aarch64' ;; x86_64) export CPU_TYPE='linux64' ;; esac; \
+	curl -o geckodriver.tgz -sSL https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-$CPU_TYPE.tar.gz \
+	&& tar xzvf geckodriver.tgz -C /usr/local/bin && rm geckodriver.tgz
 
 COPY requirements.txt .
 
