@@ -6,7 +6,7 @@ WORKDIR /app
 
 # enable community repo and install system dependencies
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/v${ALPINE_VER}/community" >> /etc/apk/repositories \
-	&& apk add --no-cache gcompat curl firefox-esr
+	&& apk add --no-cache gcompat curl firefox
 
 # download proper geckodriver and put on PATH
 RUN arch="$(uname -m)"; case "$arch" in aarch64) export CPU_TYPE='linux-aarch64' ;; x86_64) export CPU_TYPE='linux64' ;; esac; \
