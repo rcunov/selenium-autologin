@@ -1,8 +1,6 @@
 ---
-version: '3.7'
 services:
   selenium-autologin:
-    container_name: selenium-autologin
     image: rcunov/selenium-autologin
     environment:
       - SITE_USER=${SITE_USER}

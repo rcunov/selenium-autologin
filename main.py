@@ -13,7 +13,7 @@ site = os.environ['SITE_URL']
 def login():
     # set options
     fireFoxOptions = webdriver.FirefoxOptions()
-    fireFoxOptions.headless = True
+    fireFoxOptions.add_argument('--headless')
 
     # start browser
     browser = webdriver.Firefox(options=fireFoxOptions)
@@ -30,7 +30,7 @@ def login():
     password_field.send_keys(password + Keys.RETURN)
 
     # wait for page to load
-    time.sleep(5)
+    time.sleep(3)
 
     # bye bye
     browser.close()
